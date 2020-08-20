@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="myName"
+            type="com.johnpank.udacity.aboutme.MyName" />
+
+    </data>
+
+    <LinearLayout
+
+        android:layout_height="match_parent"
+        android:layout_width="match_parent"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/twName"
+            style="@style/NameStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@={myName.name}"
+            android:lineSpacingMultiplier="1.2" />
+
+        <EditText
+            android:id="@+id/etNickname"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            style="@style/NameStyle"
+            android:ems="10"
+            android:hint="@string/nick_name_hint"
+            android:inputType="textPersonName" />
+
+        <TextView
+            android:id="@+id/twNickname"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            style="@style/NameStyle"
+            android:visibility="invisible"
+            android:text="@={myName.nickName}" />
+
+        <Button
+            android:id="@+id/btnDone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="@string/done" />
+
+        <ImageView
+            android:id="@+id/star_image"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/layout_margin"
+            android:contentDescription="@string/yellow_star"
+            app:srcCompat="@android:drawable/btn_star_big_on" />
+
+        <ScrollView
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent">
+
+
+            <TextView
+                android:id="@+id/twInfo"
+                style="@style/NameStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/info" />
+
+        </ScrollView>
+
+    </LinearLayout>
+</layout>
